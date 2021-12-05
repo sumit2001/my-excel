@@ -1,5 +1,25 @@
 {
   "dependencies": {
-    "node": "^17.2.0"
-  }
+    "node": "^17.2.0",
+    "npm": "^8.2.0"
+  },
+  "name": "excel",
+  "version": "1.0.0",
+  "main": "openSave.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumit2001/my-excel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumit2001/my-excel/issues"
+  },
+  "homepage": "https://github.com/sumit2001/my-excel#readme",
+  "description": ""
 }
