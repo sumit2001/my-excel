@@ -163,6 +163,10 @@ $(document).ready(function(){
         $(this).addClass("selected");
         $(this).attr("contenteditable","true");
         $(this).focus();
+        $(".input-cell.selected").keyup(function(e) {
+            let [rowId,colId]=getRowCol(e.currentTarget);
+            $(".formula-input").html($("#row-"+rowId+"-col-"+colId).text());
+        });
     })
 
     $(".input-cell").blur(function(){
@@ -534,3 +538,8 @@ $(".icon-cut").click(function(){
     cut=true;
 })
 
+$(".formula-input").keyup(function(e) {
+    let [rowId,colId]=getRowCol($(".input-cell.selected"));
+    // console.log();
+    $("#row-"+rowId+"-col-"+colId).html($(e)[0].currentTarget.innerHTML);
+});

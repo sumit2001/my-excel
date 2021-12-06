@@ -227,7 +227,9 @@ body {
   border-bottom: 1px solid lightgray;
   outline-color: #107c41;
   font-size: 14px;
+  overflow: hidden;
   font-family: "Noto Sans";
+  white-space: nowrap;
 }
 
 .formula-editor {
