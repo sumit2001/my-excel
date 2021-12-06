@@ -60,6 +60,7 @@ $(document).ready(function(){
     $(".style-icon").click(function(){
         $(this).toggleClass("selected");    
     })
+
     function selectBorder(rowId,colId){
         fthis=$(`#row-${rowId}-col-${colId}`);
         if(rowId>1){
@@ -163,6 +164,7 @@ $(document).ready(function(){
         $(this).attr("contenteditable","true");
         $(this).focus();
     })
+
     $(".input-cell").blur(function(){
         $(".input-cell.selected").attr("contenteditable","false");
         updateCell("text",$(this).text()); 
@@ -294,13 +296,16 @@ $(".color-fill-text").click(function(){
 $(".background-color-picker").change(function(){
     updateCell("background-color",$(this).val());
 })
+
 $(".text-color-picker").change(function(){
     updateCell("color",$(this).val());
 })
+
 $(".font-family-selector").change(function(){
     updateCell("font-family",$(this).val());
     $(".font-family-selector").css("font-family",$(this).val())
 })
+
 $(".font-size-selector").change(function(){
     updateCell("font-size",$(this).val());
 })
@@ -396,10 +401,10 @@ $(".menu-file").hover(function(){
                     $(".file-rename-modal").remove();
                 });
         })
-
-    }
-    
-    
+        $(".file-options-modal").mouseleave(function(){
+            $(".file-options-modal").remove();
+        })
+    }    
 });
 
 function addSheetEvents(){
@@ -506,6 +511,7 @@ $(".icon-paste").click(function(){
         if(!cellData[selectedSheet][newRowId]){
             cellData[selectedSheet][newRowId]={};
         }
+        console.log(cellData);
         cellData[selectedSheet][newRowId][newColId]={...cellData[selectedSheet][cell[0]][cell[1]]};
         if(cut){
             delete cellData[selectedSheet][cell[0]][cell[1]];
@@ -526,6 +532,5 @@ $(".icon-cut").click(function(){
         selectedCells.push(getRowCol(this));
     })
     cut=true;
-    console.log("as");
 })
 
