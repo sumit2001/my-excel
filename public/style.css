@@ -125,8 +125,10 @@ body {
   border: 1px solid lightgray;
   display: flex;
   overflow: hidden;
+  cursor: pointer;
 }
 .row-name-container {
+  cursor: pointer;
   height: calc(75vh - 30px);
   width: 30px;
   border: 1px solid lightgray;
